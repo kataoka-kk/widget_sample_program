@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../component/inner_tab_controller_stateful.dart';
 import 'third_page.dart';
@@ -18,11 +19,11 @@ class _SecondPageState extends State<SecondPage> {
         title: const Text("SecondPage"),
       ),
       body: Column(
-        children: const [
-          SizedBox(
+        children: [
+          const SizedBox(
             height: 100,
           ),
-          InnerTabController(
+          const InnerTabController(
             initialIndex: 0,
             tebSpaceFlex: 1,
             freeSpaceFlex: 0,
@@ -49,6 +50,95 @@ class _SecondPageState extends State<SecondPage> {
               ),
             ],
           ),
+          const Divider(
+            height: 8,
+            color: Colors.red,
+          ),
+          Stack(
+            children: [
+              SizedBox(
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    alignment: Alignment.centerRight,
+                    backgroundColor: Colors.cyan,
+                    elevation: 0,
+                  ),
+                  child: const Text('アイコン'),
+                ),
+              ),
+              SizedBox(
+                width: 140,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    alignment: Alignment.center,
+                    backgroundColor: Colors.red,
+                    elevation: 0,
+                  ),
+                  child: const Text('↑側ボタン'),
+                ),
+              ),
+            ],
+          ),
+
+          /// これでデザインを色々と変更する（6.連絡ボタン）
+          TextButton(
+            onPressed: () {},
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.red,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(100)),
+              ),
+
+              /// この辺はボタンの領域内に侵食していく（width: 8,）
+              side: const BorderSide(
+                color: Colors.black,
+                width: 8,
+              ),
+            ),
+            child: const Text('TextButton'),
+          ),
+          SizedBox(
+            height: 100,
+            width: 200,
+            child: TextButton(
+              onPressed: () {
+                print('来てるけど');
+                Fluttertoast.showToast(
+                    msg: 'トースト表示', backgroundColor: Colors.red);
+              },
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.red,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(100)),
+                ),
+
+                /// この辺はボタンの領域内に侵食していく（width: 8,）
+                side: const BorderSide(
+                  color: Colors.black,
+                  width: 8,
+                ),
+              ),
+              // child: const Text('TextButton\nTextButton'),
+              child: Row(
+                children: const [
+                  Text('No'),
+                  Text('TextButton\nTextButton\nTextButton'),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 100,
+            height: 100,
+            child: IconButton(
+              color: Colors.yellow,
+              icon: const Icon(Icons.cancel),
+              onPressed: () {},
+            ),
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
