@@ -27,6 +27,47 @@ class _FifthPageState extends State<FifthPage> {
                 semanticsLabel: 'Linear progress indicator', //インジケータのラベル名
               ),
             ),
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                backgroundColor: Colors.red,
+                side: const BorderSide(width: 2, color: Colors.black),
+              ),
+              onPressed: () {},
+              child: Row(
+                children: const [
+                  Text("000"),
+                  Text("111"),
+                ],
+              ),
+            ),
+            TextButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return Dialog(
+                        child: Scaffold(
+                          appBar: AppBar(
+                            title: const Text("aaa"),
+                          ),
+                          body: const Center(
+                            child: Text("これModal"),
+                          ),
+                        ),
+                      );
+
+                      // return Container(
+                      //   color: Colors.black.withOpacity(0.5),
+                      //   child: const Center(
+                      //     child: Text(
+                      //       'これModal',
+                      //     ),
+                      //   ),
+                      // );
+                    },
+                  );
+                },
+                child: const Text('modal表示')),
           ],
         ),
         floatingActionButton: FloatingActionButton(onPressed: () {}),
