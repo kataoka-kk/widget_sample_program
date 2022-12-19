@@ -41,33 +41,36 @@ class _FifthPageState extends State<FifthPage> {
               ),
             ),
             TextButton(
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return Dialog(
-                        child: Scaffold(
-                          appBar: AppBar(
-                            title: const Text("aaa"),
-                          ),
-                          body: const Center(
-                            child: Text("これModal"),
-                          ),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return Dialog(
+                      child: Scaffold(
+                        appBar: AppBar(
+                          title: const Text("aaa"),
                         ),
-                      );
-
-                      // return Container(
-                      //   color: Colors.black.withOpacity(0.5),
-                      //   child: const Center(
-                      //     child: Text(
-                      //       'これModal',
-                      //     ),
-                      //   ),
-                      // );
-                    },
-                  );
-                },
-                child: const Text('modal表示')),
+                        body: const Center(
+                          child: Text("これModal"),
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
+              child: const Text('modal表示'),
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: 'Password',
+                /* ここからアイコンの設定 */
+                suffixIcon: IconButton(
+                  icon: const Icon(Icons.visibility_off),
+                  onPressed: () {},
+                ),
+                /* ここまで */
+              ),
+            ),
           ],
         ),
         floatingActionButton: FloatingActionButton(onPressed: () {}),
