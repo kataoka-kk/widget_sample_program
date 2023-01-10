@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:widget_sample_program/screen/six_page.dart';
 
 class FifthPage extends StatefulWidget {
   const FifthPage({Key? key}) : super(key: key);
@@ -71,9 +72,31 @@ class _FifthPageState extends State<FifthPage> {
                 /* ここまで */
               ),
             ),
+            TextFormField(
+              decoration: const InputDecoration(labelText: 'emailAddress'),
+              keyboardType: TextInputType.emailAddress,
+            ),
+            TextFormField(
+              decoration: const InputDecoration(labelText: 'name'),
+              keyboardType: TextInputType.name,
+            ),
+            TextFormField(
+              decoration: const InputDecoration(labelText: 'text'),
+              keyboardType: TextInputType.text,
+            ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(onPressed: () {}),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return const SixPage();
+                },
+              ),
+            );
+          },
+        ),
       ),
     );
   }
