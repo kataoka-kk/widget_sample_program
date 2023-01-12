@@ -84,6 +84,14 @@ class _FifthPageState extends State<FifthPage> {
               decoration: const InputDecoration(labelText: 'text'),
               keyboardType: TextInputType.text,
             ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('へこむボタン'),
+            ),
+            OutlinedButton(
+              onPressed: () {},
+              child: const Text('リップルだけボタン'),
+            ),
           ],
         ),
         floatingActionButton: FloatingActionButton(
