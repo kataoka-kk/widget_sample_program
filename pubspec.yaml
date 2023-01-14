@@ -39,6 +39,7 @@ dependencies:
   fluttertoast:
   firebase_instance_id:
   firebase_core:
+  device_info_plus:
 
   # 途中でパッケージ名の変更をしたいときに使用する
   change_app_package_name:

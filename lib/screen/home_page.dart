@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'modal/first_modal.dart';
 import 'second_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -89,7 +90,37 @@ class _HomePageState extends State<HomePage> {
                 width: 150,
                 color: Colors.red,
               ),
-            )
+            ),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                  barrierDismissible: false,
+                  context: context,
+                  builder: (context) {
+                    return const FirstModal();
+                  },
+                );
+              },
+              child: const Text('modal表示'),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 80,
+              decoration: BoxDecoration(
+                color: Colors.orange,
+                border: Border.all(
+                  width: 2,
+                  color: Colors.deepOrange,
+                ),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: const Text(
+                'エラー内容',
+                style: TextStyle(
+                  color: Colors.deepOrange,
+                ),
+              ),
+            ),
           ],
         ),
       ),
