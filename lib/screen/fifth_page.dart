@@ -111,16 +111,16 @@ class _FifthPageState extends State<FifthPage> {
 
   @override
   void initState() {
-    timer = Timer.periodic(
-      const Duration(milliseconds: 100), // 1秒毎に定期実行
-      (Timer timer) {
-        setState(() {
-          if (indicatorValue < 1.0) {
-            indicatorValue += 0.01;
-          }
-        });
-      },
-    );
+      timer = Timer.periodic(
+        const Duration(milliseconds: 100), // 1秒毎に定期実行
+        (Timer timer) {
+          setState(() {
+            if (indicatorValue < 1.0) {
+              indicatorValue += 0.01;
+            }
+          });
+        },
+      );
 
     super.initState();
   }

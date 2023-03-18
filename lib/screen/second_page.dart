@@ -154,7 +154,7 @@ class _SecondPageState extends State<SecondPage> {
               child: dropIconState
                   ? IconButton(
                       icon: const Icon(Icons.arrow_drop_down),
-                      iconSize: 25,
+                      iconSize: 60,
                       onPressed: () {
                         setState(() {
                           dropIconState = !dropIconState;
